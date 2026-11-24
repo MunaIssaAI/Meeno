@@ -1,0 +1,17 @@
+{
+  "name": "Meeno — Smart AI Agent Shield",
+  "short_name": "Meeno",
+  "description": "Multilingual protection and safe guidance for AI web agents.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f0f9ff",
+  "theme_color": "#0284c7",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='110' fill='%23f0f9ff'/%3E%3Cpolygon points='256,40 310,202 472,256 310,310 256,472 202,310 40,256 202,202' fill='%230f172a'/%3E%3Ccircle cx='256' cy='256' r='105' fill='%23ffffff'/%3E%3Cpath d='M180 264 L232 316 L350 185' stroke='%2310b981' stroke-width='46' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
