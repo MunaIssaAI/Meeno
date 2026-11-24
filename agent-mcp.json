@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "site_name": "Meeno Agentic Shield",
+  "tools": [
+    {
+      "name": "verify_agent_action",
+      "description": "Scans untrusted web pages and intended WebMCP tool calls in any language for prompt injections, returning a SHA-256 trust pass if safe.",
+      "parameters": {
+        "payload": "string",
+        "domSnapshot": "string"
+      }
+    }
+  ]
+}
