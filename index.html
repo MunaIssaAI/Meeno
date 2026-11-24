@@ -131,43 +131,42 @@
       document.getElementById("checksLabel").innerText = t.checks;
     }
 
-    function playSoftChord(freqs, duration) {
+    function playMelody(f1, f2, f3, f4) {
       if (!audioCtx || !isPlaying) return;
       const now = audioCtx.currentTime;
-      freqs.forEach((f, idx) => {
+      const list = new Array(f1, f2, f3, f4);
+      list.forEach((freq, idx) => {
         const osc = audioCtx.createOscillator();
         const gain = audioCtx.createGain();
         osc.type = "sine";
-        osc.frequency.setValueAtTime(f, now + idx * 0.18);
-        gain.gain.setValueAtTime(0.0001, now + idx * 0.18);
-        gain.gain.linearRampToValueAtTime(0.22, now + idx * 0.18 + 0.3);
-        gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.18 + duration);
+        osc.frequency.setValueAtTime(freq, now + idx * 0.25);
+        gain.gain.setValueAtTime(0.001, now + idx * 0.25);
+        gain.gain.linearRampToValueAtTime(0.35, now + idx * 0.25 + 0.2);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.25 + 2.8);
         osc.connect(gain);
         gain.connect(audioCtx.destination);
-        osc.start(now + idx * 0.18);
-        osc.stop(now + idx * 0.18 + duration);
+        osc.start(now + idx * 0.25);
+        osc.stop(now + idx * 0.25 + 2.8);
       });
     }
 
     function toggleAudio() {
       const btn = document.getElementById("audioBtn");
       if (!isPlaying) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContextClass();
         if (audioCtx.state === "suspended") audioCtx.resume();
         isPlaying = true;
         btn.innerText = "🔊 Calm Audio";
-        const chords = [
-          [261.63, 329.63, 392.00, 493.88],
-          [220.00, 261.63, 329.63, 392.00],
-          [174.61, 220.00, 261.63, 349.23],
-          [196.00, 246.94, 293.66, 392.00]
-        ];
         let step = 0;
-        playSoftChord(chords, 3.2);
+        playMelody(261.63, 329.63, 392.00, 493.88);
         musicInterval = setInterval(() => {
-          step = (step + 1) % chords.length;
-          playSoftChord(chords[step], 3.2);
-        }, 3000);
+          step = (step + 1) % 4;
+          if (step === 0) playMelody(261.63, 329.63, 392.00, 493.88);
+          if (step === 1) playMelody(220.00, 261.63, 329.63, 392.00);
+          if (step === 2) playMelody(174.61, 220.00, 261.63, 349.23);
+          if (step === 3) playMelody(196.00, 246.94, 293.66, 392.00);
+        }, 2800);
       } else {
         isPlaying = false;
         clearInterval(musicInterval);
