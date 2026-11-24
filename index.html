@@ -4,9 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Meeno - Smart Protection for AI Web Agents</title>
-  <meta property="og:title" content="Meeno - Smart Protection for AI Web Agents" />
-  <meta property="og:description" content="Verify website integrity and safeguard AI agents from hidden prompt injections in real time—in every language." />
-  <meta property="og:image" content="logo.png" />
   <style>
     body { font-family: system-ui, -apple-system, sans-serif; background: #eef6ff; margin: 0; padding: 20px; color: #1e293b; text-align: center; }
     .topbar { display: flex; justify-content: space-between; align-items: center; max-width: 600px; margin: 0 auto 20px; }
@@ -32,7 +29,7 @@
 <body>
   <div class="topbar">
     <div class="brand">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="#1e293b"/><path d="M12 7L13.5 10.5L17 12L13.5 13.5L12 17L10.5 13.5L7 12L10.5 10.5L12 7Z" fill="#10b981"/></svg>
+      <svg width="28" height="28" viewBox="0 0 64 64" fill="none"><path d="M32 2L38 14L50 10L46 22L58 28L46 34L50 46L38 42L32 54L26 42L14 46L18 34L6 28L18 22L14 10L26 14L32 2Z" fill="#0f172a"/><circle cx="32" cy="28" r="14" fill="#ffffff"/><path d="M25 28.5L29.5 33L39 23.5" stroke="#10b981" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Meeno
     </div>
     <div class="controls">
@@ -46,7 +43,7 @@
 
   <div class="card" id="mainCard">
     <div class="badge">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="#1e293b"/><path d="M12 7L13.5 10.5L17 12L13.5 13.5L12 17L10.5 13.5L7 12L10.5 10.5L12 7Z" fill="#10b981"/></svg>
+      <svg width="24" height="24" viewBox="0 0 64 64" fill="none"><path d="M32 2L38 14L50 10L46 22L58 28L46 34L50 46L38 42L32 54L26 42L14 46L18 34L6 28L18 22L14 10L26 14L32 2Z" fill="#0f172a"/><circle cx="32" cy="28" r="14" fill="#ffffff"/><path d="M25 28.5L29.5 33L39 23.5" stroke="#10b981" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Meeno
     </div>
     <h1 id="title">Smart Protection for AI Web Agents</h1>
@@ -176,3 +173,7 @@
           if (step === 2) playMelody(174.61, 220.00, 261.63, 349.23);
           if (step === 3) playMelody(196.00, 246.94, 293.66, 392.00);
         }, 2800);
+      } else {
+        isPlaying = false;
+        clearInterval(musicInterval);
+ 
