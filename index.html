@@ -13,7 +13,7 @@
     .brand { font-weight: bold; font-size: 20px; display: flex; align-items: center; gap: 8px; }
     .controls button, .controls select { background: #fff; border: 1px solid #cbd5e1; border-radius: 20px; padding: 6px 14px; font-size: 14px; cursor: pointer; }
     .card { background: #fff; max-width: 550px; margin: 0 auto; padding: 30px 20px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
-    .badge { display: inline-block; background: #f1f5f9; padding: 8px 18px; border-radius: 20px; font-weight: bold; margin-bottom: 15px; }
+    .badge { display: inline-flex; align-items: center; gap: 8px; background: #f1f5f9; padding: 8px 18px; border-radius: 20px; font-weight: bold; margin-bottom: 15px; }
     h1 { font-size: 26px; margin: 10px 0; }
     p.sub { color: #64748b; font-size: 15px; line-height: 1.5; margin-bottom: 25px; }
     .btn { display: block; width: 100%; padding: 15px; margin: 10px 0; border-radius: 12px; font-size: 16px; font-weight: bold; cursor: pointer; border: 1px solid; transition: 0.2s; }
@@ -31,7 +31,10 @@
 </head>
 <body>
   <div class="topbar">
-    <div class="brand">💠 Meeno</div>
+    <div class="brand">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="#1e293b"/><path d="M12 7L13.5 10.5L17 12L13.5 13.5L12 17L10.5 13.5L7 12L10.5 10.5L12 7Z" fill="#10b981"/></svg>
+      Meeno
+    </div>
     <div class="controls">
       <button id="audioBtn" onclick="toggleAudio()">🔇 Calm Audio</button>
       <select id="langSelect" onchange="changeLang()">
@@ -42,7 +45,10 @@
   </div>
 
   <div class="card" id="mainCard">
-    <div class="badge">💠 Meeno</div>
+    <div class="badge">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="#1e293b"/><path d="M12 7L13.5 10.5L17 12L13.5 13.5L12 17L10.5 13.5L7 12L10.5 10.5L12 7Z" fill="#10b981"/></svg>
+      Meeno
+    </div>
     <h1 id="title">Smart Protection for AI Web Agents</h1>
     <p class="sub" id="subtitle">Verify website integrity and safeguard AI agents from hidden prompt injections in real time—in every language.</p>
 
@@ -170,13 +176,3 @@
           if (step === 2) playMelody(174.61, 220.00, 261.63, 349.23);
           if (step === 3) playMelody(196.00, 246.94, 293.66, 392.00);
         }, 2800);
-      } else {
-        isPlaying = false;
-        clearInterval(musicInterval);
-        if (audioCtx) audioCtx.close();
-        btn.innerText = "🔇 Calm Audio";
-      }
-    }
-  </script>
-</body>
-</html>
